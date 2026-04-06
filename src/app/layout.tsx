@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/components/ReduxProvider";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,18 +23,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} font-sans antialiased bg-[#06060e] text-white min-h-screen`}
+        className={`${inter.variable} font-sans antialiased bg-slate-50 dark:bg-[#06060e] text-slate-900 dark:text-white min-h-screen transition-colors duration-300`}
       >
-        <ReduxProvider>
-          <Navbar />
-          <main className="pt-16 min-h-screen dot-grid">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              {children}
-            </div>
-          </main>
-        </ReduxProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ReduxProvider>
+            <Navbar />
+            <main className="pt-16 min-h-screen dot-grid">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                {children}
+              </div>
+            </main>
+          </ReduxProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

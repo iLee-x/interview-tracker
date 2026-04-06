@@ -2,17 +2,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
-:root {
-  --bg-primary: #06060e;
-  --bg-secondary: #0a0a18;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Custom date input styling for modes */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.08);
@@ -77,15 +95,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 1;
 }
 
-/* Glass card */
+/* Glass card (fallback) */
 .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+}
+.dark .glass-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
 }
 
 /* Dot grid background */
 .dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+.dark .dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }

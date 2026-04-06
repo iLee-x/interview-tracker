@@ -78,9 +78,9 @@ export default function InterviewForm({
   };
 
   const inputClasses =
-    "w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/40 transition-all text-sm";
-  const labelClasses = "block text-sm font-medium text-slate-300 mb-2";
-  const errorClasses = "text-xs text-rose-400 mt-1";
+    "w-full bg-slate-50 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] rounded-xl px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/40 transition-all text-sm";
+  const labelClasses = "block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2";
+  const errorClasses = "text-xs text-rose-500 dark:text-rose-400 mt-1";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -88,7 +88,7 @@ export default function InterviewForm({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label className={labelClasses}>
-            Company Name <span className="text-rose-400">*</span>
+            Company Name <span className="text-rose-500 dark:text-rose-400">*</span>
           </label>
           <input
             type="text"
@@ -101,7 +101,7 @@ export default function InterviewForm({
         </div>
         <div>
           <label className={labelClasses}>
-            Position <span className="text-rose-400">*</span>
+            Position <span className="text-rose-500 dark:text-rose-400">*</span>
           </label>
           <input
             type="text"
@@ -124,7 +124,7 @@ export default function InterviewForm({
             className={inputClasses + " cursor-pointer"}
           >
             {ROUND_OPTIONS.map((r) => (
-              <option key={r} value={r} className="bg-[#1a1a2e]">
+              <option key={r} value={r} className="bg-white dark:bg-[#1a1a2e]">
                 {r}
               </option>
             ))}
@@ -132,7 +132,7 @@ export default function InterviewForm({
         </div>
         <div>
           <label className={labelClasses}>
-            Date <span className="text-rose-400">*</span>
+            Date <span className="text-rose-500 dark:text-rose-400">*</span>
           </label>
           <input
             type="date"
@@ -150,7 +150,7 @@ export default function InterviewForm({
             className={inputClasses + " cursor-pointer"}
           >
             {STATUS_OPTIONS.map((s) => (
-              <option key={s.value} value={s.value} className="bg-[#1a1a2e]">
+              <option key={s.value} value={s.value} className="bg-white dark:bg-[#1a1a2e]">
                 {s.label}
               </option>
             ))}
@@ -161,7 +161,7 @@ export default function InterviewForm({
       {/* Questions */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <label className="text-sm font-medium text-slate-300">
+          <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
             Interview Questions
           </label>
           <button
@@ -191,7 +191,7 @@ export default function InterviewForm({
               <button
                 type="button"
                 onClick={() => removeQuestion(i)}
-                className="p-2.5 rounded-xl text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-all"
+                className="p-2.5 rounded-xl text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:text-slate-500 dark:hover:text-rose-400 dark:hover:bg-rose-500/10 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -215,7 +215,7 @@ export default function InterviewForm({
       </div>
 
       {/* Actions */}
-      <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+      <div className="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-white/[0.06]">
         <button
           type="submit"
           className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white text-sm font-semibold hover:from-indigo-400 hover:to-violet-500 transition-all shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/30"
@@ -225,7 +225,7 @@ export default function InterviewForm({
         <button
           type="button"
           onClick={onCancel}
-          className="px-6 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white hover:bg-white/[0.06] transition-all"
+          className="px-6 py-3 rounded-xl text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/[0.06] transition-all"
         >
           Cancel
         </button>

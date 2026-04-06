@@ -59,10 +59,10 @@ export default function DashboardPage() {
     <div className="animate-fade-in-up">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-white to-slate-400 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-slate-400 bg-clip-text text-transparent">
           Dashboard
         </h1>
-        <p className="text-slate-400 mt-1">Track your interview journey at a glance</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Track your interview journey at a glance</p>
       </div>
 
       {totalInterviews === 0 ? (
@@ -127,8 +127,8 @@ export default function DashboardPage() {
           {upcomingInterviews.length > 0 && (
             <div className="mb-10">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                <h2 className="text-xl font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse" />
                   Upcoming Interviews
                 </h2>
               </div>
@@ -147,10 +147,10 @@ export default function DashboardPage() {
           {/* Recent Activity */}
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-white">Recent Activity</h2>
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Recent Activity</h2>
               <Link
                 href="/interviews"
-                className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1"
+                className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors flex items-center gap-1"
               >
                 View all
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

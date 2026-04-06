@@ -90,10 +90,10 @@ export default function InterviewsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-white to-slate-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-slate-400 bg-clip-text text-transparent">
             All Interviews
           </h1>
-          <p className="text-slate-400 mt-1">
+          <p className="text-slate-500 dark:text-slate-400 mt-1">
             {interviews.length} interview{interviews.length !== 1 ? "s" : ""} logged
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function InterviewsPage() {
             {/* Search */}
             <div className="relative flex-1">
               <svg
-                className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -130,7 +130,7 @@ export default function InterviewsPage() {
                 value={searchQuery}
                 onChange={(e) => dispatch(setSearchQuery(e.target.value))}
                 placeholder="Search by company, position, questions..."
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl pl-10 pr-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/40 transition-all text-sm"
+                className="w-full bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] rounded-xl pl-10 pr-4 py-2.5 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500/40 transition-all text-sm shadow-sm dark:shadow-none"
               />
             </div>
 
@@ -142,13 +142,13 @@ export default function InterviewsPage() {
                   setStatusFilter(e.target.value as InterviewStatus | "all")
                 )
               }
-              className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer min-w-[140px]"
+              className="bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] rounded-xl px-4 py-2.5 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer min-w-[140px] shadow-sm dark:shadow-none"
             >
-              <option value="all" className="bg-[#1a1a2e]">
+              <option value="all" className="bg-white dark:bg-[#1a1a2e]">
                 All Status
               </option>
               {STATUS_OPTIONS.map((s) => (
-                <option key={s.value} value={s.value} className="bg-[#1a1a2e]">
+                <option key={s.value} value={s.value} className="bg-white dark:bg-[#1a1a2e]">
                   {s.label}
                 </option>
               ))}
@@ -162,13 +162,13 @@ export default function InterviewsPage() {
                 setSortBy(by as "date" | "company" | "created");
                 setSortOrder(order as "asc" | "desc");
               }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer min-w-[170px]"
+              className="bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] rounded-xl px-4 py-2.5 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/40 cursor-pointer min-w-[170px] shadow-sm dark:shadow-none"
             >
-              <option value="date-desc" className="bg-[#1a1a2e]">Date (Newest)</option>
-              <option value="date-asc" className="bg-[#1a1a2e]">Date (Oldest)</option>
-              <option value="company-asc" className="bg-[#1a1a2e]">Company (A-Z)</option>
-              <option value="company-desc" className="bg-[#1a1a2e]">Company (Z-A)</option>
-              <option value="created-desc" className="bg-[#1a1a2e]">Recently Added</option>
+              <option value="date-desc" className="bg-white dark:bg-[#1a1a2e]">Date (Newest)</option>
+              <option value="date-asc" className="bg-white dark:bg-[#1a1a2e]">Date (Oldest)</option>
+              <option value="company-asc" className="bg-white dark:bg-[#1a1a2e]">Company (A-Z)</option>
+              <option value="company-desc" className="bg-white dark:bg-[#1a1a2e]">Company (Z-A)</option>
+              <option value="created-desc" className="bg-white dark:bg-[#1a1a2e]">Recently Added</option>
             </select>
           </div>
 

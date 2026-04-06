@@ -21,21 +21,21 @@ export default function NewInterviewPage() {
       <div className="mb-8">
         <button
           onClick={() => router.back()}
-          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors mb-4"
+          className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors mb-4"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>
           Back
         </button>
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-white to-slate-400 bg-clip-text text-transparent">
+        <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-500 dark:from-white dark:via-white dark:to-slate-400 bg-clip-text text-transparent">
           Add New Interview
         </h1>
-        <p className="text-slate-400 mt-1">Log a new interview to your history</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Log a new interview to your history</p>
       </div>
 
       {/* Form */}
-      <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 sm:p-8">
+      <div className="rounded-2xl border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] p-6 sm:p-8 shadow-sm">
         <InterviewForm
           onSubmit={handleSubmit}
           onCancel={() => router.back()}
